@@ -1,0 +1,14 @@
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.imgProfile {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.iconLeft {
+  color: white !important;
+}
