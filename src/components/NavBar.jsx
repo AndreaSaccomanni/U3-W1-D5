@@ -39,13 +39,15 @@ const NavBar = () => {
             <Button variant="link" className="text-light">
               <BellFill />
             </Button>
-            <NavDropdown title={<img src={avatar} alt="User Icon" className="imgProfile" />} className="text-light bg-dark" id="dropdownMenuButton" align="end">
-              <NavDropdown.Item href="profile.html" className="bg-dark text-light ">
-                Profile
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#" className="bg-dark text-light">
-                Settings
-              </NavDropdown.Item>
+            <NavDropdown title={<img src={avatar} alt="User Icon" className="imgProfile" />} className="text-light bg-dark m/0 p/0" align="end">
+              <div className="bg-dark">
+                <NavDropdown.Item href="profile.html" className="bg-dark text-light ">
+                  Profile
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#" className="bg-dark text-light">
+                  Settings
+                </NavDropdown.Item>
+              </div>
             </NavDropdown>
           </div>
         </Navbar.Collapse>

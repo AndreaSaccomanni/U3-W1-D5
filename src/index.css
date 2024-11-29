@@ -16,3 +16,9 @@
 .footerColor {
   color: #999 !important;
 }
+
+.dropdown-menu.show {
+  background-color: rgb(33, 37, 41);
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
