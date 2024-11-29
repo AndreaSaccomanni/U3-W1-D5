@@ -32,7 +32,10 @@
   cursor: pointer;
 }
 
-#navDropdown .dropdown-item:hover {
+/* #navDropdown .dropdown-item:hover {
+  background-color: #999 !important;
+} */
+.dropdown-item:hover {
   background-color: #999 !important;
 }
 
