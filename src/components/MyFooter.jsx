@@ -1,5 +1,5 @@
 import { Col, Container, Row, Button } from "react-bootstrap";
-import { Facebook, Instagram, Twitter, Youtube, Circle } from "react-bootstrap-icons";
+import { Facebook, Instagram, Twitter, Youtube } from "react-bootstrap-icons";
 
 const MyFooter = () => {
   return (
@@ -70,8 +70,8 @@ const MyFooter = () => {
               <div className=" d-flex flex-column align-items-start">
                 <Button className="footerColor border border-1 rounded-0 mb-3 bg-dark">Service Code</Button>
                 <div className="d-flex align-items-center fs-6">
-                  <Circle className="pb-2 footerColor ps-2" />
-                  <p className="pb-2 footerColor ps-2">1997-2019 Netflix, Inc.</p>
+                  {/* <Circle className="pb-2 footerColor ps-2" /> */}
+                  <p className="pb-2 footerColor ps-2">&copy; 1997-2019 Netflix, Inc.</p>
                 </div>
               </div>
             </Col>

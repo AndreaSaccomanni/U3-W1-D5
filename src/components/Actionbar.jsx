@@ -1,5 +1,5 @@
 import { Container, Dropdown } from "react-bootstrap";
-import { TextLeft, Grid3x3GapFill } from "react-bootstrap-icons";
+import { Grid3x3GapFill } from "react-bootstrap-icons";
 
 const Actionbar = () => {
   return (
@@ -20,9 +20,11 @@ const Actionbar = () => {
             </Dropdown.Menu>
           </Dropdown>
         </div>
-        <div className="d-flex p-1 border border-light justify-content-between text-light">
-          <TextLeft className="iconLeft me-2 p-2" fill="white" style={{ color: "white" }} />
-          <Grid3x3GapFill />
+        <div className="d-flex p-1 border border-light justify-content-between text-light gap-2">
+          {/* <TextLeft className="iconLeft me-2 p-2"  style={{ color: "white" }} /> */}
+          <i className="bi bi-text-left text-white "></i>
+
+          <Grid3x3GapFill className="mt-1 " />
         </div>
       </Container>
     </>

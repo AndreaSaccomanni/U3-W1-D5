@@ -22,3 +22,8 @@
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
+
+.card {
+  border: none !important;
+  border-radius: 0 !important;
+}
