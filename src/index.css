@@ -50,3 +50,8 @@
   width: 100%;
   height: 100%;
 }
+
+.service:hover {
+  background-color: #999 !important;
+  color: white !important;
+}

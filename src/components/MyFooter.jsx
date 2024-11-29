@@ -68,7 +68,7 @@ const MyFooter = () => {
                 </Col>
               </Row>
               <div className=" d-flex flex-column align-items-start">
-                <Button className="footerColor border border-1 rounded-0 mb-3 bg-dark">Service Code</Button>
+                <Button className="service footerColor border border-1 rounded-0 mb-3 bg-dark">Service Code</Button>
                 <div className="d-flex align-items-center fs-6">
                   {/* <Circle className="pb-2 footerColor ps-2" /> */}
                   <p className="pb-2 footerColor ">&copy; 1997-2019 Netflix, Inc.</p>
