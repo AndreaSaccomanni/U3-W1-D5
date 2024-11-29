@@ -27,3 +27,11 @@
   border: none !important;
   border-radius: 0 !important;
 }
+
+.icons {
+  cursor: pointer;
+}
+
+#navDropdown .dropdown-item:hover {
+  background-color: #999 !important;
+}

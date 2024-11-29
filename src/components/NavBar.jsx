@@ -4,7 +4,7 @@ import logo from "../assets/netflix_logo.png";
 import avatar from "../assets/avatar.png";
 const NavBar = () => {
   return (
-    <Navbar expand="md" className="border-body" bg="dark" variant="dark">
+    <Navbar expand="lg" className="border-body" bg="dark" variant="dark">
       <Container fluid className="d-flex mx-4">
         <Navbar.Brand>
           <img src={logo} className="logo" alt="Netflix Logo" />
@@ -35,19 +35,17 @@ const NavBar = () => {
             <Button variant="link" className="text-light">
               <Search />
             </Button>
-            <div className="text-light">KIDS</div>
+            <Button className="text-light border-0 bg-dark">KIDS</Button>
             <Button variant="link" className="text-light">
               <BellFill />
             </Button>
-            <NavDropdown title={<img src={avatar} alt="User Icon" className="imgProfile" />} className="text-light bg-dark m/0 p/0" align="end">
-              <div className="bg-dark">
-                <NavDropdown.Item href="profile.html" className="bg-dark text-light ">
-                  Profile
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#" className="bg-dark text-light">
-                  Settings
-                </NavDropdown.Item>
-              </div>
+            <NavDropdown title={<img src={avatar} alt="User Icon" className="imgProfile" />} id="navDropdown" className="text-light bg-dark " align="end">
+              <NavDropdown.Item href="#" className="bg-dark text-light ">
+                Profile
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#" className="bg-dark text-light">
+                Settings
+              </NavDropdown.Item>
             </NavDropdown>
           </div>
         </Navbar.Collapse>

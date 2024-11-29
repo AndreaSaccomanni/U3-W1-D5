@@ -9,10 +9,12 @@ class Main extends Component {
     StarWars: []
   };
 
+  //metodo che genera una fetch per ogni gallery in base al parametro search che riempie dinamicamente l'url
   fetchMovies = (search) => {
     const apikey = "f1cd5989";
     const url = `http://www.omdbapi.com/?apikey=${apikey}&s=${search}`;
 
+    //url riempito dinamicanente
     return fetch(url)
       .then((resp) => {
         if (resp.ok) {
@@ -26,6 +28,8 @@ class Main extends Component {
         console.log("Errore: ", e);
       });
   };
+
+  //metodo che chiama fetchMovies e tramite il parametro genera una fetch specifica che andrà a modificare lo state
 
   loadGallery = () => {
     this.fetchMovies("harry potter")
