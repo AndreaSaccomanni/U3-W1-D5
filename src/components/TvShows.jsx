@@ -4,9 +4,9 @@ import MainSection from "./MainSection";
 
 class TvShows extends Component {
   state = {
-    HarryPotter: [],
-    LordOfRings: [],
-    StarWars: []
+    RickAndMorty: [],
+    TheOffice: [],
+    Shameless: []
   };
 
   //metodo che genera una fetch per ogni gallery in base al parametro search che riempie dinamicamente l'url
@@ -32,19 +32,19 @@ class TvShows extends Component {
   //metodo che chiama fetchMovies e tramite il parametro genera una fetch specifica che andrà a modificare lo state
 
   loadGallery = () => {
-    this.fetchMovies("harry potter")
-      .then((HarryPotterMovies) => {
-        this.setState({ HarryPotter: HarryPotterMovies });
+    this.fetchMovies("rick and morty")
+      .then((RickAndMortyEpisodes) => {
+        this.setState({ RickAndMorty: RickAndMortyEpisodes });
       })
-      .catch((error) => console.error("Error fetching Harry Potter movies:", error));
-    this.fetchMovies("lord of the rings")
-      .then((LordRingsMovies) => {
-        this.setState({ LordOfRings: LordRingsMovies });
+      .catch((error) => console.error("Error fetching Rick&Morty episodes:", error));
+    this.fetchMovies("the office")
+      .then((TheOfficeEpisodes) => {
+        this.setState({ TheOffice: TheOfficeEpisodes });
       })
-      .catch((error) => console.error("Error fetching Lord of the Rings movies:", error));
-    this.fetchMovies("star wars")
-      .then((starwarsMovies) => {
-        this.setState({ StarWars: starwarsMovies });
+      .catch((error) => console.error("Error fetching The Office episodes:", error));
+    this.fetchMovies("shameless")
+      .then((ShamelessEpisodes) => {
+        this.setState({ Shameless: ShamelessEpisodes });
       })
       .catch((error) => console.error("Error fetching Star Wars movies:", error));
   };
@@ -57,9 +57,9 @@ class TvShows extends Component {
     return (
       <>
         <Actionbar title="Tv Shows" />
-        <MainSection title="Harry Potter" movies={this.state.HarryPotter} />
-        <MainSection title="Lord of the Rings " movies={this.state.LordOfRings} />
-        <MainSection title="Star Wars" movies={this.state.StarWars} />
+        <MainSection title="Rick & Morty" movies={this.state.RickAndMorty} />
+        <MainSection title="The Office" movies={this.state.TheOffice} />
+        <MainSection title="Shameless" movies={this.state.Shameless} />
       </>
     );
   }
