@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Button, Spinner } from "react-bootstrap";
+import { Button, Col, Container, Row, Spinner } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 
 const MovieDetails = () => {
   const params = useParams();
   const id = params.movieId;
   const navigate = useNavigate();
+
   const [movieDetails, setMovieDetails] = useState(null);
 
   const fetchDetails = () => {
@@ -28,41 +29,48 @@ const MovieDetails = () => {
         console.log("Errore: ", e);
       });
   };
-
+  //scatena fetchDetails quando c'è un cambio di id
   useEffect(() => {
     fetchDetails();
   }, [id]);
 
   return (
-    <div className="bg-dark text-light text-center mb-0">
+    <div className="bg-dark text-light pt-5">
       {movieDetails ? (
-        <>
-          <h1>{movieDetails.Title}</h1>
-          <p>{movieDetails.Plot}</p>
-          <img src={movieDetails.Poster} alt={movieDetails.Title} />
-          <p>
-            <strong>Genre:</strong> {movieDetails.Genre}
-          </p>
-          <p>
-            <strong>Director:</strong> {movieDetails.Director}
-          </p>
-          <p>
-            <strong>Actors:</strong> {movieDetails.Actors}
-          </p>
-          <p className="mb-0 ">
-            <strong>Released:</strong> {movieDetails.Released}
-          </p>
-          <Button
-            className="btn btn-dark border mt-5"
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            Home
-          </Button>
-        </>
+        <Container>
+          <Row className="mx-auto">
+            <Col xs={12} md={5}>
+              <img src={movieDetails.Poster} alt={movieDetails.Title} />
+            </Col>
+            <Col xs={12} md={7}>
+              <h1>{movieDetails.Title}</h1>
+              <p>{movieDetails.Plot}</p>
+
+              <p className="mt-4">
+                <strong>Genre:</strong> {movieDetails.Genre}
+              </p>
+              <p>
+                <strong>Director:</strong> {movieDetails.Director}
+              </p>
+              <p>
+                <strong>Actors:</strong> {movieDetails.Actors}
+              </p>
+              <p className="pb-5 ">
+                <strong>Released:</strong> {movieDetails.Released}
+              </p>
+              <Button
+                className="btn btn-dark border"
+                onClick={() => {
+                  navigate("/");
+                }}
+              >
+                Home
+              </Button>
+            </Col>
+          </Row>
+        </Container>
       ) : (
-        <Spinner animation="grow" variant="success" />
+        <Spinner animation="grow" variant="success" className="text-center" />
       )}
     </div>
   );
