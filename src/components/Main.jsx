@@ -56,7 +56,7 @@ class Main extends Component {
   render() {
     return (
       <>
-        <Actionbar />
+        <Actionbar title="Home" />
         <MainSection title="Harry Potter" movies={this.state.HarryPotter} />
         <MainSection title="Lord of the Rings " movies={this.state.LordOfRings} />
         <MainSection title="Star Wars" movies={this.state.StarWars} />

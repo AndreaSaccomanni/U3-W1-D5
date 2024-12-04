@@ -1,12 +1,12 @@
 import { Container, Dropdown } from "react-bootstrap";
 import { Grid3x3GapFill } from "react-bootstrap-icons";
 
-const Actionbar = () => {
+const Actionbar = ({ title }) => {
   return (
     <>
       <Container fluid className="px-5 d-flex justify-content-between align-items-center bg-dark">
         <div className="d-flex align-items-center">
-          <h1 className="me-5 text-light">Home</h1>
+          <h1 className="me-5 text-light">{title}</h1>
           <Dropdown align="end">
             <Dropdown.Toggle variant="outline-light" className="text-white bg-black border-1 rounded-0">
               Genres

@@ -1,23 +1,63 @@
-// import { Button, Card } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
 const MovieDetails = () => {
   const params = useParams();
   const id = params.movieId;
 
-  return <h1>{id}</h1>;
+  const [movieDetails, setMovieDetails] = useState(null);
 
-  // <Card >
-  //   <Card.Img variant="top" src="" />
-  //   <Card.Body>
-  //     <Card.Title>Card Title</Card.Title>
-  //     <Card.Text>
-  //       Some quick example text to build on the card title and make up the
-  //       bulk of the card's content.
-  //     </Card.Text>
-  //     <Button variant="primary">Go somewhere</Button>
-  //   </Card.Body>
-  // </Card>
+  const fetchDetails = () => {
+    const apikey = "f1cd5989";
+    const url = `http://www.omdbapi.com/?apikey=${apikey}&i=${id}`;
+
+    return fetch(url)
+      .then((resp) => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          throw new Error("Errore nella chiamata");
+        }
+      })
+      .then((data) => {
+        setMovieDetails(data);
+      })
+
+      .catch((e) => {
+        console.log("Errore: ", e);
+      });
+  };
+
+  useEffect(() => {
+    fetchDetails();
+  }, [id]);
+
+  return (
+    <div className="bg-dark text-light text-center mb-0">
+      {movieDetails ? (
+        <>
+          <h1>{movieDetails.Title}</h1>
+          <p>{movieDetails.Plot}</p>
+          <img src={movieDetails.Poster} alt={movieDetails.Title} />
+          <p>
+            <strong>Genre:</strong> {movieDetails.Genre}
+          </p>
+          <p>
+            <strong>Director:</strong> {movieDetails.Director}
+          </p>
+          <p>
+            <strong>Actors:</strong> {movieDetails.Actors}
+          </p>
+          <p className="mb-0 ">
+            <strong>Released:</strong> {movieDetails.Released}
+          </p>
+        </>
+      ) : (
+        <Spinner animation="grow" variant="success" />
+      )}
+    </div>
+  );
 };
 
 export default MovieDetails;
