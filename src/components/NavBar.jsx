@@ -2,6 +2,7 @@ import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Search, BellFill } from "react-bootstrap-icons";
 import logo from "../assets/netflix_logo.png";
 import avatar from "../assets/avatar.png";
+import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <Navbar expand="lg" className="border-body" bg="dark" variant="dark">
@@ -15,10 +16,14 @@ const NavBar = () => {
         <Navbar.Collapse id="navbar-nav">
           <Nav className="me-auto mb-2 mb-lg-0">
             <Nav.Item>
-              <Nav.Link active>Home</Nav.Link>
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link>Tv Shows</Nav.Link>
+              <Link to="/TvShows" className="nav-link">
+                Tv Shows
+              </Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link>Movies</Nav.Link>
