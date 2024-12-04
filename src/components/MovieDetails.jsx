@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Button, Spinner } from "react-bootstrap";
+import { useNavigate, useParams } from "react-router-dom";
 
 const MovieDetails = () => {
   const params = useParams();
   const id = params.movieId;
-
+  const navigate = useNavigate();
   const [movieDetails, setMovieDetails] = useState(null);
 
   const fetchDetails = () => {
@@ -52,6 +52,14 @@ const MovieDetails = () => {
           <p className="mb-0 ">
             <strong>Released:</strong> {movieDetails.Released}
           </p>
+          <Button
+            className="btn btn-dark border mt-5"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Home
+          </Button>
         </>
       ) : (
         <Spinner animation="grow" variant="success" />
