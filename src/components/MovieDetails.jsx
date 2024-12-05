@@ -35,7 +35,7 @@ const MovieDetails = () => {
   }, [id]);
 
   return (
-    <div className="bg-dark text-light pt-5">
+    <div className="bg-dark text-light pt-5 mx-auto">
       {movieDetails ? (
         <Container>
           <Row className="mx-auto">
@@ -70,7 +70,7 @@ const MovieDetails = () => {
           </Row>
         </Container>
       ) : (
-        <Spinner animation="grow" variant="success" className="text-center" />
+        <Spinner animation="grow" variant="success" className="mx-auto" />
       )}
     </div>
   );
